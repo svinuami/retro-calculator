@@ -50,6 +50,17 @@ class ViewController: UIViewController {
         runningNumber += "\(button.tag)"
         resultLabel.text = runningNumber
     }
+    
+    @IBAction func handleClearPress(clearBtn: UIButton) {
+        playBtnSound()
+        runningNumber = ""
+        leftNumStr = ""
+        rightNumStr = ""
+        resultStr = ""
+        resultLabel.text = "0"
+        currentOperation = Operation.EMPTY
+    }
+    
 
     @IBAction func handleDividePress(sender: UIButton) {
         processOperation(Operation.DIVIDE)
